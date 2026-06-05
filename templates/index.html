@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Phishing Detector</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#0f172a;
+            color:white;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            width:800px;
+            background:#1e293b;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(0,255,150,0.2);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:25px;
+            color:#00ff99;
+        }
+
+        input{
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:8px;
+            margin-bottom:15px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:8px;
+            background:#00ff99;
+            color:black;
+            font-weight:bold;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            opacity:0.9;
+        }
+
+        .result-card{
+            margin-top:25px;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        .safe{
+            background:#14532d;
+            border:2px solid #22c55e;
+        }
+
+        .warning{
+            background:#78350f;
+            border:2px solid #f59e0b;
+        }
+
+        .danger{
+            background:#7f1d1d;
+            border:2px solid #ef4444;
+        }
+
+        .score{
+            font-size:22px;
+            margin-top:10px;
+            font-weight:bold;
+        }
+
+        .progress{
+            width:100%;
+            background:#334155;
+            border-radius:20px;
+            margin-top:15px;
+            overflow:hidden;
+        }
+
+        .progress-bar{
+            height:20px;
+            background:#22c55e;
+        }
+
+        ul{
+            margin-top:20px;
+            padding-left:20px;
+        }
+
+        li{
+            margin-bottom:8px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🛡 Smart Phishing Detection Dashboard</h1>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="url"
+            value="{{ url_value }}"
+            placeholder="Enter Website URL">
+
+        <button type="submit">
+            Analyze URL
+        </button>
+
+    </form>
+
+    {% if result %}
+
+        <div class="result-card
+        {% if 'Low' in result %}
+            safe
+        {% elif 'Medium' in result %}
+            warning
+        {% else %}
+            danger
+        {% endif %}
+        ">
+
+            <h2>{{ result }}</h2>
+
+            <div class="score">
+                Risk Score: {{ score }}/100
+            </div>
+
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    style="width: {{ score }}%;">
+                </div>
+            </div>
+
+        </div>
+
+        <h3 style="margin-top:20px;">
+            Detection Findings
+        </h3>
+
+        <ul>
+            {% for item in findings %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
