@@ -38,6 +38,14 @@ The system analyzes a URL using multiple phishing indicators and calculates a ri
 - Login Forms
 - Newly Registered Domains
 
+## 📸 Screenshots
+
+**Medium Risk Detection**
+![Medium Risk](assets/screenshot 1.png)
+
+**Low Risk Detection**
+![Low Risk](assets/screenshot 2.png)
+
 ## How to Run
 1. Clone the repo
    git clone https://github.com/SurbhiPanwar66/Phishing-Detector.git
@@ -50,15 +58,19 @@ The system analyzes a URL using multiple phishing indicators and calculates a ri
 ## Project Structure
 
 ```text
-Smart-Phishing-Detector/
+PHISHING-DETECTOR
 │
 ├── app.py
 ├── main.py
-├── requirements.txt
 ├── README.md
+├── requirements.txt
 ├── .gitignore
 │
-└── templates/
+├── assets
+│   └── Screenshot 1.png
+│   └── Screenshot 2.png
+│
+└── templates
     └── index.html
 ```
 
