@@ -41,10 +41,11 @@ The system analyzes a URL using multiple phishing indicators and calculates a ri
 ## 📸 Screenshots
 
 **Medium Risk Detection**
-![Medium Risk](assets/screenshot 1.png)
+![Medium Risk]<img width="1311" height="778" alt="Screenshot 1" src="https://github.com/user-attachments/assets/d2f2279d-a947-44dd-aaea-a18b19220692" />
 
 **Low Risk Detection**
-![Low Risk](assets/screenshot 2.png)
+![Low Risk]<img width="1362" height="791" alt="Screenshot 2" src="https://github.com/user-attachments/assets/2d5f4142-c317-4c9b-afc7-5ede40ed78e5" />
+
 
 ## How to Run
 1. Clone the repo
@@ -82,8 +83,3 @@ PHISHING-DETECTOR
 - PDF Report Generation
 - Real-Time Threat Intelligence
 
-## Author
-
-Surbhi Panwar
-
-Cybersecurity Enthusiast
